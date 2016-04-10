@@ -16,8 +16,7 @@
     "react": "^15.0.1",
     "react-addons-css-transition-group": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-router": "^2.0.1",
-    "style-loader": "^0.13.1"
+    "react-router": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -37,15 +36,19 @@
     "jshint-loader": "^0.8.3",
     "jsx-loader": "^0.13.2",
     "run-sequence": "^1.1.5",
+    "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:listingslab/..."
+    "url": "git@github.com:listingslab/react-spa-website"
   },
   "license": "MIT",
   "keywords": [
-    "react"
+    "react",
+    "webpack",
+    "Bootstrap",
+    "Single Page Application"
   ]
 }

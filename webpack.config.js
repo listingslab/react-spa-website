@@ -52,13 +52,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: ['babel'],
+        exclude: /node_modules/,
         query: {
           presets: ['react', 'es2015']
-        },
-        include: PATHS.app
+        }
       }
     ],
-
   },
 
   //externals: {

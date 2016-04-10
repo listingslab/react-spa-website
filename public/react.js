@@ -60,7 +60,11 @@
 
 	var _reactRouter = __webpack_require__(173);
 
-	__webpack_require__(230);
+	var _Page = __webpack_require__(230);
+
+	var _Page2 = _interopRequireDefault(_Page);
+
+	__webpack_require__(231);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -86,6 +90,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        'this is the page template',
 	        _react2.default.createElement(
 	          'ul',
 	          null,
@@ -191,38 +196,6 @@
 	  return Page1;
 	}(_react.Component);
 
-	var Page2 = function (_Component4) {
-	  _inherits(Page2, _Component4);
-
-	  function Page2() {
-	    _classCallCheck(this, Page2);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Page2).apply(this, arguments));
-	  }
-
-	  _createClass(Page2, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'Image' },
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Page 2'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Page2;
-	}(_react.Component);
-
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
@@ -231,9 +204,9 @@
 	    { path: '/', component: App },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: Index }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'page1', component: Page1 }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'page2', component: Page2 })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'page2', component: _Page2.default })
 	  )
-	), document.getElementById('react-app'));
+	), document.getElementById('react'));
 
 /***/ },
 /* 1 */
@@ -26031,15 +26004,61 @@
 
 /***/ },
 /* 230 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Page2 = function (_Component) {
+	  _inherits(Page2, _Component);
+
+	  function Page2() {
+	    _classCallCheck(this, Page2);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Page2).apply(this, arguments));
+	  }
+
+	  _createClass(Page2, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "Image" },
+	        React.createElement(
+	          "h1",
+	          null,
+	          "Page 2"
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Page2;
+	}(Component);
+
+/***/ },
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(231);
+	var content = __webpack_require__(232);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(233)(content, {});
+	var update = __webpack_require__(234)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26056,21 +26075,21 @@
 	}
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(232)();
+	exports = module.exports = __webpack_require__(233)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".Image {\n  position: absolute;\n  height: 400px;\n  width: 400px;\n}\n\n.example-enter {\n  opacity: 0.01;\n  transition: opacity .5s ease-in;\n}\n\n.example-enter.example-enter-active {\n  opacity: 1;\n}\n\n.example-leave {\n  opacity: 1;\n  transition: opacity .5s ease-in;\n}\n\n.example-leave.example-leave-active {\n  opacity: 0;\n}\n\n.link-active {\n  color: #bbbbbb;\n  text-decoration: none;\n}\n", ""]);
+	exports.push([module.id, ".Image {\n  position: absolute;\n  height: 600px;\n  width: 600px;\n}\n\n.example-enter {\n  opacity: 0.01;\n  transition: opacity .5s ease-in;\n}\n\n.example-enter.example-enter-active {\n  opacity: 1;\n}\n\n.example-leave {\n  opacity: 1;\n  transition: opacity .5s ease-in;\n}\n\n.example-leave.example-leave-active {\n  opacity: 0;\n}\n\n.link-active {\n  color: #bbbbbb;\n  text-decoration: none;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports) {
 
 	/*
@@ -26126,7 +26145,7 @@
 
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
