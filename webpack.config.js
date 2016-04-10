@@ -8,6 +8,7 @@
 const clear    = require('clear');
 const colors    = require('colors');
 const path = require('path');
+var webpack = require('webpack');
 
 clear ();
 console.log('Running Webpack'.cyanBG);
@@ -58,7 +59,7 @@ module.exports = {
         }
       }
     ],
-  },
+  }
 
   //externals: {
     // "node/npm module name": "name of exported library variable"

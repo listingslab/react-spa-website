@@ -113,7 +113,7 @@
 	            component: 'div',
 	            transitionName: 'example',
 	            transitionEnterTimeout: 500,
-	            transitionLeaveTimeout: 0
+	            transitionLeaveTimeout: 500
 	          },
 	          _react2.default.cloneElement(this.props.children, {
 	            key: this.props.location.pathname
@@ -26336,7 +26336,7 @@
 
 
 	// module
-	exports.push([module.id, ".Image {\n  position: absolute;\n  height: 600px;\n  width: 600px;\n}\n\n.example-enter {\n  opacity: 0.01;\n  transition: opacity .5s ease-in;\n}\n\n.example-enter.example-enter-active {\n  opacity: 1;\n}\n\n.example-leave {\n  opacity: 1;\n  transition: opacity .5s ease-in;\n}\n\n.example-leave.example-leave-active {\n  opacity: 0;\n}\n\n.link-active {\n  color: #bbbbbb;\n  text-decoration: none;\n}\n", ""]);
+	exports.push([module.id, ".example-enter {\n  opacity: 0.01;\n  transition: opacity .5s ease-in;\n}\n\n.example-enter.example-enter-active {\n  opacity: 1;\n}\n\n.example-leave {\n  opacity: 1;\n  transition: opacity .5s ease-in;\n}\n\n.example-leave.example-leave-active {\n  opacity: 0;\n}", ""]);
 
 	// exports
 
