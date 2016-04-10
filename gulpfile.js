@@ -9,20 +9,20 @@ var del			= require('del');
 var colors 		= require('colors');
 var runSequence = require('run-sequence');
 
-gulp.task('create_lib', function() {
-	console.log('Copying bootstrap & jquery to /public/lib/'.green);
+gulp.task('create_vendor', function() {
+	console.log('Copying bootstrap & jquery to /public/vendor/'.green);
 	gulp.src("node_modules/bootstrap/dist/**")
-		.pipe(gulp.dest('public/lib/bootstrap'))
+		.pipe(gulp.dest('public/vendor/bootstrap'))
 	gulp.src("node_modules/jquery/dist/**")
-		.pipe(gulp.dest('public/lib/jquery'))
+		.pipe(gulp.dest('public/vendor/jquery'))
 });
 
 gulp.task('del_bootstrap', function () {
-	return del('public/lib/bootstrap/**');
+	return del('public/vendor/bootstrap/**');
 });
 
 gulp.task('del_jquery', function () {
-	return del('public/lib/jquery/**');
+	return del('public/vendor/jquery/**');
 });
 
 gulp.task('default',function (){
@@ -30,7 +30,7 @@ gulp.task('default',function (){
 	runSequence(
 		'del_bootstrap',
 		'del_jquery',
-		'create_lib'
+		'create_vendor'
 	);
 	//gulp.watch('src/html/**', ['html']);
 });
