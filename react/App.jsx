@@ -2,36 +2,33 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
+
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Page2 from './pages/Page2';
-import './app.css'
+
+import './app.css';
 
 class App extends Component {
   render() {
 
     return (
       <div>
-      
-        <h1>Bootstrap HTML</h1>
-
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/page2">Page 2</Link></li>
-        </ul>
-
-        <ReactCSSTransitionGroup
-          component="div"
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
-          {React.cloneElement(this.props.children, {
-            key: this.props.location.pathname
-          })}
-        </ReactCSSTransitionGroup>
-
+        <Navbar/>
+          <ReactCSSTransitionGroup
+            component="div"
+            transitionName="example"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            {React.cloneElement(this.props.children, {
+              key: this.props.location.pathname
+            })}
+          </ReactCSSTransitionGroup>
+        <Footer/>
       </div>
     )
   }

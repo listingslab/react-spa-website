@@ -4,9 +4,12 @@ export default class About extends React.Component {
 
   render() {
     return (
-      <div className="Image">
-        <h2>About Us</h2>
-        <p>Consectetur adipisicing elit, sed do eiusmod tempor 
+      
+      <div className="container page">
+        <div className="page-header">
+              <h1>About</h1>
+        </div>
+        <p className="lead">Consectetur adipisicing elit, sed do eiusmod tempor 
         incididunt ut labore et dolore magna aliqua. Ut enim ad 
         minim veniam, quis nostrud exercitation ullamco laboris 
         nisi ut aliquip ex ea commodo consequat.</p>

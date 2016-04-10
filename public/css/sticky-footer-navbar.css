@@ -30,6 +30,9 @@ body > .container {
 .container .text-muted {
   margin: 20px 0;
 }
+.page {
+  margin-top: 50px;
+}
 
 .footer > .container {
   padding-right: 15px;
