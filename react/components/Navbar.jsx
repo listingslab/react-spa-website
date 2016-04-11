@@ -24,8 +24,16 @@ export default class Navbar extends React.Component {
           <div id="navbar" className="collapse navbar-collapse">
             <ul className="nav navbar-nav">
               <li className="active"><Link to="/">Home</Link></li>
-              <li><Link to="/accommodation">Accommodation</Link></li>
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accommodation <span className="caret"></span></a>
+                <ul className="dropdown-menu">
+                  <li><a href="/accommodation">The House</a></li>
+                  <li><a href="/facilities">Facilities</a></li>
+                  <li><a href="/parking">Parking</a></li>
+                </ul>
+              </li>
               <li><Link to="/reviews">Reviews</Link></li>
+              <li><Link to="/location">Location</Link></li>
             </ul>
           </div>
         </div>

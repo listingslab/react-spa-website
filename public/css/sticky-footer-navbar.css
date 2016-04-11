@@ -42,3 +42,7 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+.map {
+  border:0px;
+}

@@ -72,15 +72,19 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(233);
+	var _Accommodation = __webpack_require__(233);
 
-	var _About2 = _interopRequireDefault(_About);
+	var _Accommodation2 = _interopRequireDefault(_Accommodation);
 
-	var _Page = __webpack_require__(234);
+	var _Reviews = __webpack_require__(234);
 
-	var _Page2 = _interopRequireDefault(_Page);
+	var _Reviews2 = _interopRequireDefault(_Reviews);
 
-	__webpack_require__(235);
+	var _Location = __webpack_require__(235);
+
+	var _Location2 = _interopRequireDefault(_Location);
+
+	__webpack_require__(236);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -107,18 +111,9 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Navbar2.default, null),
-	        _react2.default.createElement(
-	          _reactAddonsCssTransitionGroup2.default,
-	          {
-	            component: 'div',
-	            transitionName: 'example',
-	            transitionEnterTimeout: 500,
-	            transitionLeaveTimeout: 500
-	          },
-	          _react2.default.cloneElement(this.props.children, {
-	            key: this.props.location.pathname
-	          })
-	        ),
+	        _react2.default.cloneElement(this.props.children, {
+	          key: this.props.location.pathname
+	        }),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
@@ -134,8 +129,9 @@
 	    _reactRouter.Route,
 	    { path: '/', component: App },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'page2', component: _Page2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'accommodation', component: _Accommodation2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'reviews', component: _Reviews2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'location', component: _Location2.default })
 	  )
 	), document.getElementById('react'));
 
@@ -26015,11 +26011,34 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'dropdown' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/about' },
-	                  'About'
+	                  'a',
+	                  { href: '/accommodation', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+	                  'Accommodation ',
+	                  _react2.default.createElement('span', { className: 'caret' })
+	                ),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: 'dropdown-menu' },
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#' },
+	                      'One'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#' },
+	                      'Two'
+	                    )
+	                  )
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -26027,8 +26046,17 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: '/page2' },
-	                  'Page2'
+	                  { to: '/reviews' },
+	                  'Reviews'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/location' },
+	                  'Location'
 	                )
 	              )
 	            )
@@ -26145,18 +26173,23 @@
 	          _react2.default.createElement(
 	            "h1",
 	            null,
-	            "Home"
+	            "Longview Lodge"
 	          )
 	        ),
 	        _react2.default.createElement(
 	          "p",
 	          { className: "lead" },
-	          "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+	          "Longview Lodge is the perfect location to enjoy your Kangaroo Island holiday experience. Use it as your central location to explore all the splendours the island has to offer, as it is conveniently located between Penneshaw and Kingscote."
 	        ),
 	        _react2.default.createElement(
 	          "p",
-	          null,
-	          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	          { className: "lead" },
+	          "On your return to the Lodge after exploring the island sit back on the veranda and enjoy the sanctuary of the garden including an abundance of flora and fauna which may include; Tamar Wallabies, Possums, Rosenberg Goannas, Koalas and if you're lucky enough you may see Spike the local Echidna. There is an abundance of bird life including the endangered Glossy Black Cockatoo which are frequent visitors to the garden."
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "Suitable for the entire family, romantic weekend or time with your friends as it sleeps up to eight people. Well equipped with all the comforts of home, yet away from it all to ensure you can sit back and relax!"
 	        )
 	      );
 	    }
@@ -26191,16 +26224,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var About = function (_React$Component) {
-	  _inherits(About, _React$Component);
+	var Accommodation = function (_React$Component) {
+	  _inherits(Accommodation, _React$Component);
 
-	  function About() {
-	    _classCallCheck(this, About);
+	  function Accommodation() {
+	    _classCallCheck(this, Accommodation);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(About).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Accommodation).apply(this, arguments));
 	  }
 
-	  _createClass(About, [{
+	  _createClass(Accommodation, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -26212,27 +26245,32 @@
 	          _react2.default.createElement(
 	            "h1",
 	            null,
-	            "About"
+	            "Accommodation"
 	          )
 	        ),
 	        _react2.default.createElement(
 	          "p",
 	          { className: "lead" },
-	          "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+	          "Longview Lodge is characterised by a split level lounge, sun room, outdoor entertaining area, bar, bird watching hut, air-conditioning and a fan-forced wood heater set in a fireplace for those romantic moments."
 	        ),
 	        _react2.default.createElement(
 	          "p",
-	          null,
-	          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	          { className: "lead" },
+	          "An atrium opens out to provide access to three bedrooms and the main bathroom with quality bed linen. The main bedroom is spacious with a queen bed, quiet reading area, WIR and ensuite. A quaint second bedroom has a double bed and the third is suitably designed for four individuals with two sets of bunk beds."
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "All bedrooms have personal exterior doors with views an access to the peaceful garden setting. The main bathroom ompletes the package with a luxurious double spa bath with towels provided."
 	        )
 	      );
 	    }
 	  }]);
 
-	  return About;
+	  return Accommodation;
 	}(_react2.default.Component);
 
-	exports.default = About;
+	exports.default = Accommodation;
 
 /***/ },
 /* 234 */
@@ -26258,16 +26296,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Page2 = function (_React$Component) {
-	  _inherits(Page2, _React$Component);
+	var Reviews = function (_React$Component) {
+	  _inherits(Reviews, _React$Component);
 
-	  function Page2() {
-	    _classCallCheck(this, Page2);
+	  function Reviews() {
+	    _classCallCheck(this, Reviews);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Page2).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Reviews).apply(this, arguments));
 	  }
 
-	  _createClass(Page2, [{
+	  _createClass(Reviews, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -26279,39 +26317,107 @@
 	          _react2.default.createElement(
 	            "h1",
 	            null,
-	            "Page 2"
+	            "Reviews"
 	          )
 	        ),
-	        _react2.default.createElement(
-	          "p",
-	          { className: "lead" },
-	          "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-	        )
+	        _react2.default.createElement("p", { className: "lead" })
 	      );
 	    }
 	  }]);
 
-	  return Page2;
+	  return Reviews;
 	}(_react2.default.Component);
 
-	exports.default = Page2;
+	exports.default = Reviews;
 
 /***/ },
 /* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Location = function (_React$Component) {
+	  _inherits(Location, _React$Component);
+
+	  function Location() {
+	    _classCallCheck(this, Location);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Location).apply(this, arguments));
+	  }
+
+	  _createClass(Location, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "container page" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "page-header" },
+	          _react2.default.createElement(
+	            "h1",
+	            null,
+	            "Location"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "Longview Lodge is located in American River on Kangaroo Island. The Island can be accessed from Cape Jervis via the ",
+	          _react2.default.createElement(
+	            "a",
+	            { title: "Sealink", href: "https://www.sealink.com.au/kangaroo-island-accommodation/462-Longview-Lodge", target: "_blank" },
+	            "Sealink Ferry Service"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "After arriving at Penneshaw, enjoy a beautiful scenic drive past Pelican Lagoon to Longview Lodge in American River."
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          _react2.default.createElement("iframe", { src: "https://www.google.com/maps/d/embed?mid=zJgP7ZQV2PjU.kbnvByLU5k4s", width: "100%", height: "480" })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Location;
+	}(_react2.default.Component);
+
+	exports.default = Location;
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(236);
+	var content = __webpack_require__(237);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(238)(content, {});
+	var update = __webpack_require__(239)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26328,10 +26434,10 @@
 	}
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(237)();
+	exports = module.exports = __webpack_require__(238)();
 	// imports
 
 
@@ -26342,7 +26448,7 @@
 
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports) {
 
 	/*
@@ -26398,7 +26504,7 @@
 
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
