@@ -1,7 +1,5 @@
 # Listingslab's React SPA Website Seed
 
-react-spa-website
-
 ## Key Technologies
 
 - Node/NPM
@@ -9,10 +7,6 @@ react-spa-website
 - React
 - ES6/Babel
 
-## Development
-```
-gulp --silent
-```
 
  ```
   _ _     _   _                 _       _     
