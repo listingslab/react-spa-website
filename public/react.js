@@ -64,27 +64,39 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _Footer = __webpack_require__(231);
+	var _Carousel = __webpack_require__(231);
+
+	var _Carousel2 = _interopRequireDefault(_Carousel);
+
+	var _Footer = __webpack_require__(232);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _Home = __webpack_require__(232);
+	var _Home = __webpack_require__(233);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Accommodation = __webpack_require__(233);
+	var _Accommodation = __webpack_require__(234);
 
 	var _Accommodation2 = _interopRequireDefault(_Accommodation);
 
-	var _Reviews = __webpack_require__(234);
+	var _Facilities = __webpack_require__(235);
+
+	var _Facilities2 = _interopRequireDefault(_Facilities);
+
+	var _Parking = __webpack_require__(236);
+
+	var _Parking2 = _interopRequireDefault(_Parking);
+
+	var _Reviews = __webpack_require__(237);
 
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 
-	var _Location = __webpack_require__(235);
+	var _Location = __webpack_require__(238);
 
 	var _Location2 = _interopRequireDefault(_Location);
 
-	__webpack_require__(236);
+	__webpack_require__(239);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -106,11 +118,11 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(_Navbar2.default, null),
+	        _react2.default.createElement(_Carousel2.default, null),
 	        _react2.default.cloneElement(this.props.children, {
 	          key: this.props.location.pathname
 	        }),
@@ -130,6 +142,8 @@
 	    { path: '/', component: App },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'accommodation', component: _Accommodation2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'facilities', component: _Facilities2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'parking', component: _Parking2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'reviews', component: _Reviews2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'location', component: _Location2.default })
 	  )
@@ -25969,7 +25983,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'nav',
-	        { className: 'navbar navbar-inverse navbar-fixed-top' },
+	        { className: 'navbar navbar-default navbar-fixed-top' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container' },
@@ -26014,7 +26028,7 @@
 	                { className: 'dropdown' },
 	                _react2.default.createElement(
 	                  'a',
-	                  { href: '/accommodation', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+	                  { href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
 	                  'Accommodation ',
 	                  _react2.default.createElement('span', { className: 'caret' })
 	                ),
@@ -26026,8 +26040,8 @@
 	                    null,
 	                    _react2.default.createElement(
 	                      'a',
-	                      { href: '#' },
-	                      'One'
+	                      { href: '/accommodation' },
+	                      'The House'
 	                    )
 	                  ),
 	                  _react2.default.createElement(
@@ -26035,8 +26049,17 @@
 	                    null,
 	                    _react2.default.createElement(
 	                      'a',
-	                      { href: '#' },
-	                      'Two'
+	                      { href: '/facilities' },
+	                      'Facilities'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/parking' },
+	                      'Parking'
 	                    )
 	                  )
 	                )
@@ -26095,6 +26118,181 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var Carousel = function (_React$Component) {
+	  _inherits(Carousel, _React$Component);
+
+	  function Carousel() {
+	    _classCallCheck(this, Carousel);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Carousel).apply(this, arguments));
+	  }
+
+	  _createClass(Carousel, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { id: "theCarousel", className: "carousel slide", "data-ride": "carousel" },
+	        _react2.default.createElement(
+	          "ol",
+	          { className: "carousel-indicators" },
+	          _react2.default.createElement("li", { "data-target": "#theCarousel", "data-slide-to": "0", className: "active" }),
+	          _react2.default.createElement("li", { "data-target": "#theCarousel", "data-slide-to": "1" }),
+	          _react2.default.createElement("li", { "data-target": "#theCarousel", "data-slide-to": "2" })
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "carousel-inner", role: "listbox" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "item active" },
+	            _react2.default.createElement("img", { className: "first-slide", src: "/img/carousel/FrontYardViews.jpg", alt: "Longview Lodge" }),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "carousel-caption" },
+	                _react2.default.createElement(
+	                  "h1",
+	                  null,
+	                  "Example headline."
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  "lorem ipsum"
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { className: "btn btn-lg btn-primary", href: "#", role: "button" },
+	                    "Sign up today"
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "item" },
+	            _react2.default.createElement("img", { className: "another-slide", src: "/img/carousel/FrontViews.jpg", alt: "Longview Lodge" }),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "carousel-caption" },
+	                _react2.default.createElement(
+	                  "h1",
+	                  null,
+	                  "Example headline."
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  "Note: If you're viewing this page uttons onue to web browser security rules."
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { className: "btn btn-lg btn-primary", href: "#", role: "button" },
+	                    "Sign up today"
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "item" },
+	            _react2.default.createElement("img", { className: "second-slide", src: "/img/carousel/OverlookingLounge.jpg", alt: "Second slide" }),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "carousel-caption" },
+	                _react2.default.createElement(
+	                  "h1",
+	                  null,
+	                  "Another example headline."
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  "Nullam id dolor id nibh ultricies vehicula ut id elit."
+	                ),
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { className: "btn btn-lg btn-primary", href: "#", role: "button" },
+	                    "Learn more"
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "a",
+	          { className: "left carousel-control", href: "#theCarousel", role: "button", "data-slide": "prev" },
+	          _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-left", "aria-hidden": "true" }),
+	          _react2.default.createElement(
+	            "span",
+	            { className: "sr-only" },
+	            "Previous"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "a",
+	          { className: "right carousel-control", href: "#theCarousel", role: "button", "data-slide": "next" },
+	          _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-right", "aria-hidden": "true" }),
+	          _react2.default.createElement(
+	            "span",
+	            { className: "sr-only" },
+	            "Next"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Carousel;
+	}(_react2.default.Component);
+
+	exports.default = Carousel;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var Footer = function (_React$Component) {
 	  _inherits(Footer, _React$Component);
 
@@ -26129,7 +26327,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26201,7 +26399,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26273,7 +26471,123 @@
 	exports.default = Accommodation;
 
 /***/ },
-/* 234 */
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Facilities = function (_React$Component) {
+	  _inherits(Facilities, _React$Component);
+
+	  function Facilities() {
+	    _classCallCheck(this, Facilities);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Facilities).apply(this, arguments));
+	  }
+
+	  _createClass(Facilities, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "container page" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "page-header" },
+	          _react2.default.createElement(
+	            "h1",
+	            null,
+	            "Facilities"
+	          )
+	        ),
+	        _react2.default.createElement("p", { className: "lead" })
+	      );
+	    }
+	  }]);
+
+	  return Facilities;
+	}(_react2.default.Component);
+
+	exports.default = Facilities;
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Parking = function (_React$Component) {
+	  _inherits(Parking, _React$Component);
+
+	  function Parking() {
+	    _classCallCheck(this, Parking);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Parking).apply(this, arguments));
+	  }
+
+	  _createClass(Parking, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "container page" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "page-header" },
+	          _react2.default.createElement(
+	            "h1",
+	            null,
+	            "Parking"
+	          )
+	        ),
+	        _react2.default.createElement("p", { className: "lead" })
+	      );
+	    }
+	  }]);
+
+	  return Parking;
+	}(_react2.default.Component);
+
+	exports.default = Parking;
+
+/***/ },
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26320,7 +26634,46 @@
 	            "Reviews"
 	          )
 	        ),
-	        _react2.default.createElement("p", { className: "lead" })
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          "Carmen Family"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "\"The best guesthouse we have ever stayed in. Provided us with wonderful experience during our trip on Kangaroo Island\""
+	        ),
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          "Johnston Family"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "\"Really beautiful place (the house and grounds) Great place for the kids to run and play Had a great time experiencing the Island. Lots of lovely wildlife and flora. American River was a nice play to stay. Would definitely recommend your home and this town to my friends\""
+	        ),
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          "Robson Family"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "\"Serenity! Lovely home - better equipped than ours!\""
+	        ),
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          "Ellison Family"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "\"Lovely house in a secluded and picturesque setting. Well kitted out for a large family, with plenty of activities for the kids. We had a lovely stay and would happily stay again\""
+	        )
 	      );
 	    }
 	  }]);
@@ -26331,7 +26684,7 @@
 	exports.default = Reviews;
 
 /***/ },
-/* 235 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26396,7 +26749,7 @@
 	        _react2.default.createElement(
 	          "p",
 	          { className: "lead" },
-	          _react2.default.createElement("iframe", { src: "https://www.google.com/maps/d/embed?mid=zJgP7ZQV2PjU.kbnvByLU5k4s", width: "100%", height: "480" })
+	          _react2.default.createElement("iframe", { className: "map", src: "https://www.google.com/maps/d/embed?mid=zJgP7ZQV2PjU.kbnvByLU5k4s", width: "100%", height: "480" })
 	        )
 	      );
 	    }
@@ -26408,16 +26761,16 @@
 	exports.default = Location;
 
 /***/ },
-/* 236 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(237);
+	var content = __webpack_require__(240);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(239)(content, {});
+	var update = __webpack_require__(242)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26434,10 +26787,10 @@
 	}
 
 /***/ },
-/* 237 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(238)();
+	exports = module.exports = __webpack_require__(241)();
 	// imports
 
 
@@ -26448,7 +26801,7 @@
 
 
 /***/ },
-/* 238 */
+/* 241 */
 /***/ function(module, exports) {
 
 	/*
@@ -26504,7 +26857,7 @@
 
 
 /***/ },
-/* 239 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

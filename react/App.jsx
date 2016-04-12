@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 
 import Navbar from './components/Navbar';
+import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
@@ -13,7 +14,6 @@ import Parking from './pages/Parking';
 import Reviews from './pages/Reviews';
 import Location from './pages/Location';
 
-
 import './app.css';
 
 class App extends Component {
@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <div>
         <Navbar/>
+        <Carousel />
             {React.cloneElement(this.props.children, {
               key: this.props.location.pathname
             })}
